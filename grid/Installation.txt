@@ -1,0 +1,17 @@
+##############################################################
+
+Manual installation steps
+
+Update etc/LocalConfig.json with relevant information
+
+
+Make sure that .bashrc is executed at login
+
+Add the following core to .bashrc
+
+	export testHome=`grep TESTHOME ~/.RmTest | cut -d "=" -f2`
+
+	. $testHome/cmd/setConfig.sh
+
+
+open project as maven project in your favourite IDE

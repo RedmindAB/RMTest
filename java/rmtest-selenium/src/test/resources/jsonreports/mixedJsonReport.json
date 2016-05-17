@@ -1,0 +1,579 @@
+{
+  "suite": "test.oldstuff.TestingTheOldStuf",
+  "totalTests": 30,
+  "failures": 3,
+  "totalIgnored": 0,
+  "success": false,
+  "runTime": 14.72,
+  "UUID": "3423de18-fcfa-43b9-aee1-5ca94acd986d",
+  "timestamp": "20160126100133",
+  "tests": [
+    {
+      "id": 21,
+      "method": "And i input \"Ã„lta centrum (Nacka)\" in \"to\"#14",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 8,
+      "method": "And i input \"Ã„lta centrum (Nacka)\" in \"to\"#14",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 20,
+      "method": "And i press Enter#13",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 7,
+      "method": "And i press Enter#13",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 22,
+      "method": "And i press Enter#15",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 9,
+      "method": "And i press Enter#15",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 23,
+      "method": "And that i click on \"search\"#16",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 10,
+      "method": "And that i click on \"search\"#16",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 19,
+      "method": "Given i input \"HÃ¶torget (Stockholm)\" in \"from\"#12",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 6,
+      "method": "Given i input \"HÃ¶torget (Stockholm)\" in \"from\"#12",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 25,
+      "method": "Given that we navigate to \"http://google.se\"#4",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on google",
+      "runTime": 0.0
+    },
+    {
+      "id": 12,
+      "method": "Given that we navigate to \"http://google.se\"#4",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on google",
+      "runTime": 0.0
+    },
+    {
+      "id": 17,
+      "method": "Given that we navigate to \"http://sl.se\"#4",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 14,
+      "method": "Given that we navigate to \"http://sl.se\"#4",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 4,
+      "method": "Given that we navigate to \"http://sl.se\"#4",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 1,
+      "method": "Given that we navigate to \"http://sl.se\"#4",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 18,
+      "method": "Given the aliases defined in the file \"src/test/resources/test/cucumber/aliases\"#5",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 15,
+      "method": "Given the aliases defined in the file \"src/test/resources/test/cucumber/aliases\"#5",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 5,
+      "method": "Given the aliases defined in the file \"src/test/resources/test/cucumber/aliases\"#5",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 2,
+      "method": "Given the aliases defined in the file \"src/test/resources/test/cucumber/aliases\"#5",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 24,
+      "method": "Then the first result should be \"HÃ¶torget\" to \"Ã„lta centrum\"#17",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "failure",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "failureMessage": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)\"}\n  (Session info: chrome\u003d47.0.2526.111)\n  (Driver info: chromedriver\u003d2.20.353124 (035346203162d32c80f1dce587c8154a1efa0c3b),platform\u003dMac OS X 10.10.5 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 10.05 seconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.49.1\u0027, revision: \u00277203e46\u0027, time: \u00272016-01-21 17:35:35\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, chrome\u003d{userDataDir\u003d/var/folders/ft/v0br86d17v7bg1fsqxyz5r6r0000gn/T/.org.chromium.Chromium.ayLrsF}, takesHeapSnapshot\u003dtrue, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d47.0.2526.111, platform\u003dMAC, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: a57dffaf6fcbf862e77badefad10cad4\n*** Element info: {Using\u003dcss selector, value\u003d.search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)}\nCommand duration or timeout: 10.42 seconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.49.1\u0027, revision: \u0027808c23b0963853d375cbe54b90bbd052e2528a54\u0027, time: \u00272016-01-21 09:37:52\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, chrome\u003d{userDataDir\u003d/var/folders/ft/v0br86d17v7bg1fsqxyz5r6r0000gn/T/.org.chromium.Chromium.ayLrsF}, takesHeapSnapshot\u003dtrue, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d47.0.2526.111, platform\u003dMAC, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, webdriver.remote.sessionid\u003dd748c770-30d0-4c24-ad02-5fc67ce331cf, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: d748c770-30d0-4c24-ad02-5fc67ce331cf\n*** Element info: {Using\u003dcss selector, value\u003d.search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:422)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:492)\n\tat org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)\n\tat test.cucumber.TestingTheCucumber$Steps.the_first_result_should_be_to(TestingTheCucumber.java:38)\n\tat âœ½.Then the first result should be \"HÃ¶torget\" to \"Ã„lta centrum\"(test/cucumber/TestingTheCucumber.feature:17)\nCaused by: org.openqa.selenium.remote.ScreenshotException: Screen shot has been taken\nBuild info: version: \u00272.49.1\u0027, revision: \u0027808c23b0963853d375cbe54b90bbd052e2528a54\u0027, time: \u00272016-01-21 09:37:52\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: driver.version: RemoteWebDriver\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:138)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:492)\n\tat org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)\n\tat test.cucumber.TestingTheCucumber$Steps.the_first_result_should_be_to(TestingTheCucumber.java:38)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:497)\n\tat cucumber.runtime.Utils$1.call(Utils.java:37)\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:13)\n\tat cucumber.runtime.Utils.invoke(Utils.java:31)\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:299)\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:88)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:93)\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\n\tat se.redmind.rmtest.runners.WebDriverRunner.runChild(WebDriverRunner.java:112)\n\tat se.redmind.rmtest.runners.WebDriverRunner.runChild(WebDriverRunner.java:37)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\nCaused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)\"}\n  (Session info: chrome\u003d47.0.2526.111)\n  (Driver info: chromedriver\u003d2.20.353124 (035346203162d32c80f1dce587c8154a1efa0c3b),platform\u003dMac OS X 10.10.5 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 10.05 seconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.49.1\u0027, revision: \u00277203e46\u0027, time: \u00272016-01-21 17:35:35\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, chrome\u003d{userDataDir\u003d/var/folders/ft/v0br86d17v7bg1fsqxyz5r6r0000gn/T/.org.chromium.Chromium.ayLrsF}, takesHeapSnapshot\u003dtrue, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d47.0.2526.111, platform\u003dMAC, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: a57dffaf6fcbf862e77badefad10cad4\n*** Element info: {Using\u003dcss selector, value\u003d.search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)}\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.49.1\u0027, revision: \u0027808c23b0963853d375cbe54b90bbd052e2528a54\u0027, time: \u00272016-01-21 09:37:52\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: driver.version: EventFiringWebDriver\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:422)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:492)\n\tat org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)\n\tat sun.reflect.GeneratedMethodAccessor15.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:497)\n\tat org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)\n\tat com.sun.proxy.$Proxy1.findElement(Unknown Source)\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:188)\n\tat org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:48)\n\tat org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:1)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)\n\t... 3 more\n",
+      "runTime": 0.004
+    },
+    {
+      "id": 11,
+      "method": "Then the first result should be \"HÃ¶torget\" to \"Ã„lta centrum\"#17",
+      "testclass": "Scenario: Search a trip and expect a result",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 26,
+      "method": "Then the title contains \"Google\"#7",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on google",
+      "runTime": 0.0
+    },
+    {
+      "id": 13,
+      "method": "Then the title contains \"Google\"#7",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on google",
+      "runTime": 0.0
+    },
+    {
+      "id": 16,
+      "method": "Then the title contains \"SL\"#9",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 3,
+      "method": "Then the title contains \"SL\"#9",
+      "testclass": "Scenario: Verify the title of the page",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": true,
+      "feature": "Feature: Test cucumber on SL",
+      "runTime": 0.0
+    },
+    {
+      "id": 29,
+      "method": "test_searchTravelAndExpectAResult",
+      "testclass": "test.oldstuff.TestingTheOldStuf",
+      "status": "idle",
+      "result": "failure",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": false,
+      "failureMessage": "org.openqa.selenium.TimeoutException: Timed out after 10 seconds waiting for visibility of element located by By.cssSelector: .search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)\nBuild info: version: \u00272.49.1\u0027, revision: \u0027808c23b0963853d375cbe54b90bbd052e2528a54\u0027, time: \u00272016-01-21 09:37:52\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, chrome\u003d{userDataDir\u003d/var/folders/ft/v0br86d17v7bg1fsqxyz5r6r0000gn/T/.org.chromium.Chromium.cpbZ9s}, takesHeapSnapshot\u003dtrue, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d47.0.2526.111, platform\u003dMAC, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, webdriver.remote.sessionid\u003d68551be1-0b7e-42bc-a7ad-e34dda9df2b7, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 68551be1-0b7e-42bc-a7ad-e34dda9df2b7\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)\n\tat test.oldstuff.TestBase.getElement(TestBase.java:57)\n\tat test.oldstuff.TestBase.expectSearchResult(TestBase.java:47)\n\tat test.oldstuff.TestingTheOldStuf.test_searchTravelAndExpectAResult(TestingTheOldStuf.java:31)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:497)\n\tat org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)\n\tat org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)\n\tat org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)\n\tat org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)\n\tat org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)\n\tat org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)\n\tat org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\n\tat se.redmind.rmtest.runners.WebDriverRunner.runChild(WebDriverRunner.java:112)\n\tat se.redmind.rmtest.runners.WebDriverRunner.runChild(WebDriverRunner.java:37)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\nCaused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)\"}\n  (Session info: chrome\u003d47.0.2526.111)\n  (Driver info: chromedriver\u003d2.20.353124 (035346203162d32c80f1dce587c8154a1efa0c3b),platform\u003dMac OS X 10.10.5 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 7 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.49.1\u0027, revision: \u00277203e46\u0027, time: \u00272016-01-21 17:35:35\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, chrome\u003d{userDataDir\u003d/var/folders/ft/v0br86d17v7bg1fsqxyz5r6r0000gn/T/.org.chromium.Chromium.cpbZ9s}, takesHeapSnapshot\u003dtrue, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d47.0.2526.111, platform\u003dMAC, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: fbece04f6fbae6e6ae9deac302013752\n*** Element info: {Using\u003dcss selector, value\u003d.search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)}\nCommand duration or timeout: 310 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.49.1\u0027, revision: \u0027808c23b0963853d375cbe54b90bbd052e2528a54\u0027, time: \u00272016-01-21 09:37:52\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, chrome\u003d{userDataDir\u003d/var/folders/ft/v0br86d17v7bg1fsqxyz5r6r0000gn/T/.org.chromium.Chromium.cpbZ9s}, takesHeapSnapshot\u003dtrue, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d47.0.2526.111, platform\u003dMAC, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, webdriver.remote.sessionid\u003d68551be1-0b7e-42bc-a7ad-e34dda9df2b7, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 68551be1-0b7e-42bc-a7ad-e34dda9df2b7\n*** Element info: {Using\u003dcss selector, value\u003d.search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:422)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:492)\n\tat org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:911)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)\n\t... 29 more\nCaused by: org.openqa.selenium.remote.ScreenshotException: Screen shot has been taken\nBuild info: version: \u00272.49.1\u0027, revision: \u0027808c23b0963853d375cbe54b90bbd052e2528a54\u0027, time: \u00272016-01-21 09:37:52\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: driver.version: RemoteWebDriver\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:138)\n\t... 39 more\nCaused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)\"}\n  (Session info: chrome\u003d47.0.2526.111)\n  (Driver info: chromedriver\u003d2.20.353124 (035346203162d32c80f1dce587c8154a1efa0c3b),platform\u003dMac OS X 10.10.5 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 7 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.49.1\u0027, revision: \u00277203e46\u0027, time: \u00272016-01-21 17:35:35\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, chrome\u003d{userDataDir\u003d/var/folders/ft/v0br86d17v7bg1fsqxyz5r6r0000gn/T/.org.chromium.Chromium.cpbZ9s}, takesHeapSnapshot\u003dtrue, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d47.0.2526.111, platform\u003dMAC, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: fbece04f6fbae6e6ae9deac302013752\n*** Element info: {Using\u003dcss selector, value\u003d.search-results.middle-col \u003e div:nth-of-type(2) \u003e div:nth-of-type(2) \u003e h3:nth-of-type(2)}\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.49.1\u0027, revision: \u0027808c23b0963853d375cbe54b90bbd052e2528a54\u0027, time: \u00272016-01-21 09:37:52\u0027\nSystem info: host: \u0027Gustavs-MBP\u0027, ip: \u0027192.168.75.232\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.10.5\u0027, java.version: \u00271.8.0_51\u0027\nDriver info: driver.version: EventFiringWebDriver\n\tat sun.reflect.GeneratedConstructorAccessor37.newInstance(Unknown Source)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:422)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:492)\n\tat org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)\n\tat sun.reflect.GeneratedMethodAccessor15.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:497)\n\tat org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)\n\tat com.sun.proxy.$Proxy1.findElement(Unknown Source)\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:188)\n\tat org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:48)\n\tat org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:1)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)\n\t... 3 more\n",
+      "runTime": 11.281
+    },
+    {
+      "id": 27,
+      "method": "test_searchTravelAndExpectAResult",
+      "testclass": "test.oldstuff.TestingTheOldStuf",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": false,
+      "runTime": 2.102
+    },
+    {
+      "id": 30,
+      "method": "test_titleContainsSL",
+      "testclass": "test.oldstuff.TestingTheOldStuf",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "chrome",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": false,
+      "runTime": 0.008
+    },
+    {
+      "id": 28,
+      "method": "test_titleContainsSL",
+      "testclass": "test.oldstuff.TestingTheOldStuf",
+      "status": "idle",
+      "result": "passed",
+      "deviceInfo": {
+        "os": "OSX",
+        "osver": "UNKNOWN",
+        "device": "AnApple",
+        "browser": "firefox",
+        "browserVer": "UNKNOWN"
+      },
+      "isGherkin": false,
+      "runTime": 0.007
+    }
+  ],
+  "properties": {
+    "java.runtime.name": "Java(TM) SE Runtime Environment",
+    "cucumber.options": " --tags ~@ignore",
+    "sun.boot.library.path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib",
+    "java.vm.version": "25.51-b03",
+    "gopherProxySet": "false",
+    "java.vm.vendor": "Oracle Corporation",
+    "java.vendor.url": "http://java.oracle.com/",
+    "PATH": "${system_path}",
+    "path.separator": ":",
+    "java.vm.name": "Java HotSpot(TM) 64-Bit Server VM",
+    "file.encoding.pkg": "sun.io",
+    "user.country": "SE",
+    "sun.java.launcher": "SUN_STANDARD",
+    "sun.os.patch.level": "unknown",
+    "java.vm.specification.name": "Java Virtual Machine Specification",
+    "user.dir": "/Users/gustavholfve/Documents/redmind/test.cucumber",
+    "java.runtime.version": "1.8.0_51-b16",
+    "java.awt.graphicsenv": "sun.awt.CGraphicsEnvironment",
+    "java.endorsed.dirs": "/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/endorsed",
+    "os.arch": "x86_64",
+    "java.io.tmpdir": "/var/folders/ft/v0br86d17v7bg1fsqxyz5r6r0000gn/T/",
+    "line.separator": "\n",
+    "java.vm.specification.vendor": "Oracle Corporation",
+    "os.name": "Mac OS X",
+    "sun.jnu.encoding": "UTF-8",
+    "java.library.path": "/Users/gustavholfve/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.",
+    "java.specification.name": "Java Platform API Specification",
+    "java.class.version": "52.0",
+    "sun.management.compiler": "HotSpot 64-Bit Tiered Compilers",
+    "os.version": "10.10.5",
+    "http.nonProxyHosts": "local|*.local|169.254/16|*.169.254/16",
+    "user.home": "/Users/gustavholfve",
+    "user.timezone": "Europe/Stockholm",
+    "java.awt.printerjob": "sun.lwawt.macosx.CPrinterJob",
+    "file.encoding": "UTF-8",
+    "java.specification.version": "1.8",
+    "java.class.path": "/Users/gustavholfve/Documents/redmind/test.cucumber/target/test-classes:/Users/gustavholfve/Documents/redmind/test.cucumber/target/classes:/Users/gustavholfve/Documents/redmind/RMTest/java/rmtest-selenium/target/classes:/Users/gustavholfve/.m2/repository/se/redmind/rmtest-common/2.0.2/rmtest-common-2.0.2.jar:/Users/gustavholfve/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/gustavholfve/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/gustavholfve/.m2/repository/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar:/Users/gustavholfve/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar:/Users/gustavholfve/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/Users/gustavholfve/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/Users/gustavholfve/.m2/repository/org/reflections/reflections/0.9.10/reflections-0.9.10.jar:/Users/gustavholfve/.m2/repository/com/google/code/findbugs/annotations/2.0.1/annotations-2.0.1.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-java/2.49.1/selenium-java-2.49.1.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/2.49.1/selenium-edge-driver-2.49.1.jar:/Users/gustavholfve/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-htmlunit-driver/2.49.1/selenium-htmlunit-driver-2.49.1.jar:/Users/gustavholfve/.m2/repository/net/sourceforge/htmlunit/htmlunit/2.18/htmlunit-2.18.jar:/Users/gustavholfve/.m2/repository/xalan/xalan/2.7.2/xalan-2.7.2.jar:/Users/gustavholfve/.m2/repository/xalan/serializer/2.7.2/serializer-2.7.2.jar:/Users/gustavholfve/.m2/repository/net/sourceforge/htmlunit/htmlunit-core-js/2.17/htmlunit-core-js-2.17.jar:/Users/gustavholfve/.m2/repository/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar:/Users/gustavholfve/.m2/repository/net/sourceforge/nekohtml/nekohtml/1.9.22/nekohtml-1.9.22.jar:/Users/gustavholfve/.m2/repository/net/sourceforge/cssparser/cssparser/0.9.16/cssparser-0.9.16.jar:/Users/gustavholfve/.m2/repository/org/w3c/css/sac/1.3/sac-1.3.jar:/Users/gustavholfve/.m2/repository/org/eclipse/jetty/websocket/websocket-client/9.2.12.v20150709/websocket-client-9.2.12.v20150709.jar:/Users/gustavholfve/.m2/repository/org/eclipse/jetty/jetty-util/9.2.12.v20150709/jetty-util-9.2.12.v20150709.jar:/Users/gustavholfve/.m2/repository/org/eclipse/jetty/jetty-io/9.2.12.v20150709/jetty-io-9.2.12.v20150709.jar:/Users/gustavholfve/.m2/repository/org/eclipse/jetty/websocket/websocket-common/9.2.12.v20150709/websocket-common-9.2.12.v20150709.jar:/Users/gustavholfve/.m2/repository/org/eclipse/jetty/websocket/websocket-api/9.2.12.v20150709/websocket-api-9.2.12.v20150709.jar:/Users/gustavholfve/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/2.49.1/selenium-firefox-driver-2.49.1.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/2.49.1/selenium-ie-driver-2.49.1.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/2.49.1/selenium-safari-driver-2.49.1.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-support/2.49.1/selenium-support-2.49.1.jar:/Users/gustavholfve/.m2/repository/org/webbitserver/webbit/0.4.14/webbit-0.4.14.jar:/Users/gustavholfve/.m2/repository/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-leg-rc/2.49.1/selenium-leg-rc-2.49.1.jar:/Users/gustavholfve/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-server/2.49.1/selenium-server-2.49.1.jar:/Users/gustavholfve/.m2/repository/com/beust/jcommander/1.48/jcommander-1.48.jar:/Users/gustavholfve/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar:/Users/gustavholfve/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar:/Users/gustavholfve/.m2/repository/mx4j/mx4j-tools/3.0.1/mx4j-tools-3.0.1.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/jetty-repacked/9.2.13.v20150730/jetty-repacked-9.2.13.v20150730.jar:/Users/gustavholfve/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/jetty-rc-repacked/5/jetty-rc-repacked-5.jar:/Users/gustavholfve/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/gustavholfve/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/2.49.1/selenium-chrome-driver-2.49.1.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/2.49.1/selenium-remote-driver-2.49.1.jar:/Users/gustavholfve/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar:/Users/gustavholfve/.m2/repository/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar:/Users/gustavholfve/.m2/repository/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.jar:/Users/gustavholfve/.m2/repository/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.jar:/Users/gustavholfve/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/gustavholfve/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/gustavholfve/.m2/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar:/Users/gustavholfve/.m2/repository/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.jar:/Users/gustavholfve/.m2/repository/org/seleniumhq/selenium/selenium-api/2.49.1/selenium-api-2.49.1.jar:/Users/gustavholfve/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.6.3/jackson-databind-2.6.3.jar:/Users/gustavholfve/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.6.0/jackson-annotations-2.6.0.jar:/Users/gustavholfve/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.6.3/jackson-core-2.6.3.jar:/Users/gustavholfve/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.6.3/jackson-dataformat-yaml-2.6.3.jar:/Users/gustavholfve/.m2/repository/org/yaml/snakeyaml/1.15/snakeyaml-1.15.jar:/Users/gustavholfve/.m2/repository/org/hibernate/hibernate-validator/5.2.2.Final/hibernate-validator-5.2.2.Final.jar:/Users/gustavholfve/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/Users/gustavholfve/.m2/repository/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.jar:/Users/gustavholfve/.m2/repository/com/fasterxml/classmate/1.1.0/classmate-1.1.0.jar:/Users/gustavholfve/.m2/repository/javax/el/javax.el-api/2.2.4/javax.el-api-2.2.4.jar:/Users/gustavholfve/.m2/repository/org/glassfish/web/javax.el/2.2.4/javax.el-2.2.4.jar:/Users/gustavholfve/.m2/repository/com/codeborne/phantomjsdriver/1.2.1/phantomjsdriver-1.2.1.jar:/Users/gustavholfve/Documents/redmind/RMTest/java/rmtest-cucumber-selenium/target/classes:/Users/gustavholfve/Documents/redmind/RMTest/java/rmtest-cucumber/target/classes:/Users/gustavholfve/.m2/repository/info/cukes/cucumber-picocontainer/1.2.4/cucumber-picocontainer-1.2.4.jar:/Users/gustavholfve/.m2/repository/info/cukes/cucumber-java/1.2.4/cucumber-java-1.2.4.jar:/Users/gustavholfve/.m2/repository/info/cukes/cucumber-jvm-deps/1.0.5/cucumber-jvm-deps-1.0.5.jar:/Users/gustavholfve/.m2/repository/info/cukes/gherkin/2.12.2/gherkin-2.12.2.jar:/Users/gustavholfve/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/Users/gustavholfve/.m2/repository/info/cukes/cucumber-junit/1.2.4/cucumber-junit-1.2.4.jar:/Users/gustavholfve/.m2/repository/info/cukes/cucumber-core/1.2.4/cucumber-core-1.2.4.jar:/Users/gustavholfve/.m2/repository/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.jar:/Users/gustavholfve/.m2/repository/se/redmind/rmtest-logback/2.0.2/rmtest-logback-2.0.2.jar:/Users/gustavholfve/.m2/repository/org/slf4j/jul-to-slf4j/1.7.12/jul-to-slf4j-1.7.12.jar:/Users/gustavholfve/.m2/repository/ch/qos/logback/logback-core/1.1.3/logback-core-1.1.3.jar:/Users/gustavholfve/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar:/Users/gustavholfve/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.12/log4j-over-slf4j-1.7.12.jar:/Users/gustavholfve/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.12/jcl-over-slf4j-1.7.12.jar:/Users/gustavholfve/eclipse/java-mars/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/214/0/.cp/:/Users/gustavholfve/eclipse/java-mars/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/213/0/.cp/",
+    "user.name": "gustavholfve",
+    "java.vm.specification.version": "1.8",
+    "sun.java.command": "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 56679 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames test.suite.AllTests",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre",
+    "sun.arch.data.model": "64",
+    "user.language": "sv",
+    "java.specification.vendor": "Oracle Corporation",
+    "awt.toolkit": "sun.lwawt.macosx.LWCToolkit",
+    "java.vm.info": "mixed mode",
+    "java.version": "1.8.0_51",
+    "java.ext.dirs": "/Users/gustavholfve/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java",
+    "sun.boot.class.path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/classes",
+    "java.vendor": "Oracle Corporation",
+    "file.separator": "/",
+    "java.vendor.url.bug": "http://bugreport.sun.com/bugreport/",
+    "sun.io.unicode.encoding": "UnicodeBig",
+    "sun.cpu.endian": "little",
+    "socksNonProxyHosts": "local|*.local|169.254/16|*.169.254/16",
+    "ftp.nonProxyHosts": "local|*.local|169.254/16|*.169.254/16",
+    "sun.cpu.isalist": ""
+  }
+}

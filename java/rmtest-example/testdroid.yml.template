@@ -1,0 +1,11 @@
+runner:
+  type: testdroid
+  username: your-username
+  password: your-password
+  appPath: /path/to/your/app.apk
+  capabilities:
+    platformName: Android
+    testdroid_target: Android
+    deviceName: Android Device
+    testdroid_project: LocalAppium
+    testdroid_testrun: Android Run 1

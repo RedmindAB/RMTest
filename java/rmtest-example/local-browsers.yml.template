@@ -1,0 +1,4 @@
+drivers:
+  - type: chrome
+  - type: firefox
+  - type: phantomjs

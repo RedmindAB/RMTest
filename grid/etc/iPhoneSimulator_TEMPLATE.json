@@ -1,0 +1,31 @@
+{
+    "capabilities": [
+        {
+            "browserName": "Safari",
+            "version": "IOS_VERSION",
+            "maxInstances": 1,
+            "description": "DESCR_STRING",
+            "platformName": "iOS",
+            "deviceName": "DEVICE_NAME",
+            "platform": "MAC",
+            "platformVersion":"IOS_VERSION",
+	    "rmDeviceType":"DEVICE_TYPE",
+	    "newCommandTimeout":"300",
+            "launchTimeout" : "30000",
+            "locationServicesEnabled":"true"
+        }
+    ],
+    "configuration": {
+        "cleanUpCycle": 2000,
+        "timeout": 30000,
+        "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+        "url": "http://APPIUM_HOST:APPIUM_PORT/wd/hub",
+        "host": "APPIUM_HOST",
+        "port": APPIUM_PORT,
+        "maxSession": 1,
+        "register": true,
+        "registerCycle": 5000,
+        "hubPort": 4444,
+        "hubHost": "HUB_HOST"
+    }
+}
