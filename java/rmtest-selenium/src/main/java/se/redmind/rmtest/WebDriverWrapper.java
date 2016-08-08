@@ -68,7 +68,15 @@ public class WebDriverWrapper<WebDriverType extends WebDriver> {
                     throw new RuntimeException(ex);
                 }
             });
-            WebDriverType driver = function.apply(capabilities);
+            WebDriverType driver;
+            try {
+                driver = function.apply(capabilities);
+            } catch (UnreachableBrowserException | SessionNotCreatedException exception) {
+                isInitializing.set(false);
+                driverInstance.remove();
+                logger.error(exception.getMessage());
+                throw exception;
+            }
             openDrivers.add(driver);
             postConfigurations.forEach(postConfiguration -> postConfiguration.accept(driver));
             isStarted.set(true);
@@ -142,11 +150,13 @@ public class WebDriverWrapper<WebDriverType extends WebDriver> {
                 }
                 driverInstance.remove();
                 isStarted.remove();
+                logger.info("Driver [" + description + "] closed");
             }
         }
     }
 
     public void stopAllDrivers() {
+        logger.info("Closing all drivers");
         openDrivers.forEach(driver -> driver.quit());
     }
 
