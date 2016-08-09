@@ -61,28 +61,26 @@ public class WebDriverWrapper<WebDriverType extends WebDriver> {
                 throw new IllegalStateException("this driver is already being initialized, is getDriver() being called in a pre/postConfiguration hook?");
             }
             isInitializing.set(true);
-            preConfigurations.forEach(preConfiguration -> {
-                try {
-                    preConfiguration.run();
-                } catch (Exception ex) {
-                    throw new RuntimeException(ex);
-                }
-            });
-            WebDriverType driver;
             try {
-                driver = function.apply(capabilities);
-            } catch (UnreachableBrowserException | SessionNotCreatedException exception) {
+                preConfigurations.forEach(preConfiguration -> {
+                    try {
+                        preConfiguration.run();
+                    } catch (Exception ex) {
+                        throw new RuntimeException(ex);
+                    }
+                });
+                WebDriverType driver = function.apply(capabilities);
+                postConfigurations.forEach(postConfiguration -> postConfiguration.accept(driver));
+                openDrivers.add(driver);
+                isStarted.set(true);
+                logger.info("Started driver [" + description + "] (took " + (System.currentTimeMillis() - start) + "ms)");
+                return driver;
+            } catch (Exception e) {
+                logger.error(e.getMessage());
+                throw e;
+            } finally {
                 isInitializing.set(false);
-                driverInstance.remove();
-                logger.error(exception.getMessage());
-                throw exception;
             }
-            openDrivers.add(driver);
-            postConfigurations.forEach(postConfiguration -> postConfiguration.accept(driver));
-            isStarted.set(true);
-            logger.info("Started driver [" + description + "] (took " + (System.currentTimeMillis() - start) + "ms)");
-            isInitializing.set(false);
-            return driver;
         }
 
     };
