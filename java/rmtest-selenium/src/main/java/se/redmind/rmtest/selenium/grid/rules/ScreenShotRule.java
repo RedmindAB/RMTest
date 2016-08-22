@@ -14,7 +14,7 @@ import se.redmind.rmtest.selenium.framework.RMReportScreenshot;
 public class ScreenShotRule extends TestWatcher {
 
     private static final Logger LOG = LoggerFactory.getLogger(ScreenShotRule.class);
-
+    private String format;
     private WebDriverWrapper<?> driverContainer;
 
     @SuppressWarnings("OverridableMethodCallInConstructor")
@@ -26,10 +26,14 @@ public class ScreenShotRule extends TestWatcher {
         this.driverContainer = driverWrapper;
         return driverWrapper;
     }
+    public String setFormat(String format){
+        this.format = format;
+        return format;
+    }
 
     public void takeScreenShot(String className, String methodName) {
         try {
-            RMReportScreenshot RMRScreenshot = new RMReportScreenshot(driverContainer);
+            RMReportScreenshot RMRScreenshot = new RMReportScreenshot(driverContainer, format);
             RMRScreenshot.takeScreenshot(className, methodName, "Failed Testcase");
             if (LOG.isDebugEnabled()) {
                 LOG.debug("----------> ScreenShot from: " + methodName + " taken! <----------");

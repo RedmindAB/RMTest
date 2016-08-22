@@ -1,36 +1,34 @@
 package se.redmind.rmtest.selenium.framework;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import se.redmind.rmtest.WebDriverWrapper;
 import se.redmind.utils.StackTraceInfo;
+import se.redmind.utils.TestHome;
 
-import java.awt.AlphaComposite;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
-import javax.imageio.ImageIO;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import se.redmind.rmtest.WebDriverWrapper;
-import se.redmind.utils.TestHome;
-
 public class RMReportScreenshot {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RMReportScreenshot.class);
     private static final int MAX_LONG_SIDE = 1920;
-    private static final String FILE_EXTENTION = "png";
     private static final HashMap<String, Integer> FILENAME_NUMBERS = new HashMap<>();
-
+    private String screenShotFormat;
     private final WebDriverWrapper<?> driverWrapper;
 
-    public RMReportScreenshot(WebDriverWrapper<?> driverWrapper) {
+    public RMReportScreenshot(WebDriverWrapper<?> driverWrapper, String screenShotFormat) {
         this.driverWrapper = driverWrapper;
+        this.screenShotFormat = screenShotFormat;
+        if(screenShotFormat.equals(null) || screenShotFormat.isEmpty()){
+            screenShotFormat="png";
+        }
     }
 
     /**
@@ -72,7 +70,7 @@ public class RMReportScreenshot {
 
     private void saveImage(BufferedImage image, String filename) {
         try {
-            ImageIO.write(image, FILE_EXTENTION, new File(filename));
+            ImageIO.write(image, screenShotFormat, new File(filename));
         } catch (IOException e) {
             LOGGER.error("Image: " + image + " filename: " + filename, e);
         }
@@ -86,7 +84,7 @@ public class RMReportScreenshot {
         }
         timestamp = timestamp.replace("-", "");
         String description = driverWrapper.getDescription();
-        String filename = className + "." + methodName + "-" + timestamp + "[" + description + "]." + FILE_EXTENTION;
+        String filename = className + "." + methodName + "-" + timestamp + "[" + description + "]." + screenShotFormat;
         int screenshotNumber = getPrefixNumber(filename);
         if (prefix != null && prefix.length() > 0) {
             filename = prefix + "-_-" + filename;
