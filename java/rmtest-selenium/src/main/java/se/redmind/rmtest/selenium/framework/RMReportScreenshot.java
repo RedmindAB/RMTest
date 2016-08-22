@@ -31,6 +31,11 @@ public class RMReportScreenshot {
         }
     }
 
+    public RMReportScreenshot(WebDriverWrapper<?> driverWrapper) {
+        this(driverWrapper, "png");
+    }
+
+
     /**
      * this method should be called directly from a test-method, the filename will have the name of the invoked class and method inside it. if more than one
      * screenshot is taken in the same method make sure that the screenshot is unique for each screenshot.
