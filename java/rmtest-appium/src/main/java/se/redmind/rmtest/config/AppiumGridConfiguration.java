@@ -18,18 +18,18 @@ import io.appium.java_client.ios.IOSDriver;
 public class AppiumGridConfiguration extends GridConfiguration {
 
     @Override
-    protected RemoteWebDriver createGridWebDriver(URL driverUrl, DesiredCapabilities otherCapabilities) {
-        String platformName = (String) otherCapabilities.getCapability("platformName");
+    protected RemoteWebDriver createRemoteWebDriver(URL driverUrl, DesiredCapabilities capabilities) {
+        String platformName = (String) capabilities.getCapability("platformName");
         if (null != platformName) {
             List<String> elements = Arrays.asList(platformName.toUpperCase().split("\\s"));
             if (elements.contains("ANDROID")) {
-                return new AndroidDriver<>(driverUrl, otherCapabilities);
+                return new AndroidDriver<>(driverUrl, capabilities);
             }
             if (elements.contains("IOS")) {
-                return new IOSDriver<>(driverUrl, otherCapabilities);
+                return new IOSDriver<>(driverUrl, capabilities);
             }
         }
-        return super.createGridWebDriver(driverUrl, otherCapabilities);
+        return super.createRemoteWebDriver(driverUrl, capabilities);
     }
 
 
