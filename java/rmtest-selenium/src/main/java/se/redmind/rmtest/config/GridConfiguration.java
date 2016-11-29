@@ -8,6 +8,7 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -20,7 +21,7 @@ import se.redmind.rmtest.selenium.grid.HubNodesStatus;
  * @author Jeremy Comte
  */
 @JsonTypeName("grid")
-public class GridConfiguration extends DriverConfiguration<GridWebDriver> {
+public class GridConfiguration extends DriverConfiguration<RemoteWebDriver> {
 
     @JsonProperty
     @NotNull
@@ -37,8 +38,8 @@ public class GridConfiguration extends DriverConfiguration<GridWebDriver> {
     }
 
     @Override
-    protected List<WebDriverWrapper<GridWebDriver>> createDrivers() {
-        List<WebDriverWrapper<GridWebDriver>> instances = new ArrayList<>();
+    protected List<WebDriverWrapper<RemoteWebDriver>> createDrivers() {
+        List<WebDriverWrapper<RemoteWebDriver>> instances = new ArrayList<>();
         HubNodesStatus nodeInfo = new HubNodesStatus(hubIp, hubPort);
         nodeInfo.getNodesAsRegReqs().forEach(nodeReq -> {
             nodeReq.getCapabilities().stream()
@@ -49,7 +50,7 @@ public class GridConfiguration extends DriverConfiguration<GridWebDriver> {
                         URL driverUrl = new URL("http://" + nodeReq.getConfigAsString("host") + ":" + nodeReq.getConfigAsString("port") + "/wd/hub");
                         generateCapabilities().asMap().forEach((key, value) -> capabilities.setCapability(key, value));
                         instances.add(new WebDriverWrapper<>(capabilities, driverDescription, (otherCapabilities) -> {
-                            return new GridWebDriver(driverUrl, otherCapabilities);
+                            return createRemoteWebDriver(driverUrl, otherCapabilities);
                         }));
                     } catch (MalformedURLException e) {
                         throw new RuntimeException(e);
@@ -57,5 +58,9 @@ public class GridConfiguration extends DriverConfiguration<GridWebDriver> {
                 });
         });
         return instances;
+    }
+
+    protected RemoteWebDriver createRemoteWebDriver(URL driverUrl, DesiredCapabilities capabilities) {
+        return new GridWebDriver(driverUrl, capabilities);
     }
 }
