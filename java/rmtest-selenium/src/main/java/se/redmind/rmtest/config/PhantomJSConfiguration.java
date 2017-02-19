@@ -19,7 +19,7 @@ import se.redmind.utils.TestHome;
 public class PhantomJSConfiguration extends LocalConfiguration<PhantomJSDriver> {
 
     public PhantomJSConfiguration() {
-        super(createPhantomJSCapabilities(), capabilities -> new PhantomJSDriver(capabilities));
+        super(createPhantomJSCapabilities(), PhantomJSDriver::new);
     }
 
     public static DesiredCapabilities createPhantomJSCapabilities() {

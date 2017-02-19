@@ -58,7 +58,7 @@ public class Cucumber extends ParentRunner<FeatureRunner> {
      * @throws org.junit.runners.model.InitializationError if there is another problem
      */
     public Cucumber(Class clazz) throws InitializationError, IOException {
-        this(clazz, null, new Object[0]);
+        this(clazz, null);
     }
 
     public Cucumber(Class clazz, String name, Object... parameters) throws InitializationError, IOException {
@@ -86,7 +86,7 @@ public class Cucumber extends ParentRunner<FeatureRunner> {
                 if (hideStepsInReports) {
                     Throwable error = result.getError();
                     if (error != null) {
-                        EachTestNotifier executionUnitNotifier = Fields.getSafeValue(this, "executionUnitNotifier");
+                        EachTestNotifier executionUnitNotifier = Fields.getValue(this, "executionUnitNotifier");
                         if (executionUnitNotifier != null) {
                             executionUnitNotifier.addFailure(error);
                         }
@@ -135,10 +135,10 @@ public class Cucumber extends ParentRunner<FeatureRunner> {
     }
 
     private void appendParameterizedName(FeatureRunner featureRunner) throws InitializationError {
-        List<ParentRunner<?>> runners = Fields.getSafeValue(featureRunner, "children");
-        CucumberFeature cucumberFeature = Fields.getSafeValue(featureRunner, "cucumberFeature");
-        String featureName = ((String) Fields.getSafeValue(cucumberFeature, "path")).replaceFirst(".feature$", "").replaceAll("/", ".");
-        Map<String, StepDefinition> stepDefinitionsByPattern = Fields.getSafeValue(runtime.getGlue(), "stepDefinitionsByPattern");
+        List<ParentRunner<?>> runners = Fields.getValue(featureRunner, "children");
+        CucumberFeature cucumberFeature = Fields.getValue(featureRunner, "cucumberFeature");
+        String featureName = ((String) Fields.getValue(cucumberFeature, "path")).replaceFirst(".feature$", "").replaceAll("/", ".");
+        Map<String, StepDefinition> stepDefinitionsByPattern = Fields.getValue(runtime.getGlue(), "stepDefinitionsByPattern");
         for (int i = 0; i < runners.size(); i++) {
             ParentRunner<?> runner = runners.get(i);
             if (runner instanceof ExecutionUnitRunner) {
@@ -152,8 +152,8 @@ public class Cucumber extends ParentRunner<FeatureRunner> {
 
 
     private ExecutionUnitRunner replaceExecutionRunner(String featureName, Map<String, StepDefinition> stepDefinitionsByPattern, ExecutionUnitRunner runner) throws InitializationError {
-        CucumberScenario cucumberScenario = Fields.getSafeValue(runner, "cucumberScenario");
-        Scenario scenario = Fields.getSafeValue(cucumberScenario, "scenario");
+        CucumberScenario cucumberScenario = Fields.getValue(runner, "cucumberScenario");
+        Scenario scenario = Fields.getValue(cucumberScenario, "scenario");
         return new ExecutionUnitRunner(runtime, cucumberScenario, jUnitReporter) {
             @Override
             public Description getDescription() {
@@ -185,7 +185,7 @@ public class Cucumber extends ParentRunner<FeatureRunner> {
                 Method method = null;
                 for (Map.Entry<String, StepDefinition> entry : stepDefinitionsByPattern.entrySet()) {
                     if (step.getName().matches(entry.getKey())) {
-                        method = Fields.getSafeValue(entry.getValue(), "method");
+                        method = Fields.getValue(entry.getValue(), "method");
                         break;
                     }
                 }
@@ -195,13 +195,13 @@ public class Cucumber extends ParentRunner<FeatureRunner> {
     }
 
     private ScenarioOutlineRunner replaceScenarioOutlineRunner(String featureName, Map<String, StepDefinition> stepDefinitionsByPattern, ScenarioOutlineRunner runner) throws InitializationError {
-        CucumberScenarioOutline cucumberScenarioOutline = Fields.getSafeValue(runner, "cucumberScenarioOutline");
+        CucumberScenarioOutline cucumberScenarioOutline = Fields.getValue(runner, "cucumberScenarioOutline");
         ScenarioOutlineRunner scenarioOutlineRunner = new ScenarioOutlineRunner(runtime, cucumberScenarioOutline, jUnitReporter) {
 
             @Override
             public Description getDescription() {
                 if (reportRealClassNames) {
-                    Description description = Fields.getSafeValue(this, "description");
+                    Description description = Fields.getValue(this, "description");
                     if (description == null) {
                         description = Description.createSuiteDescription(getName(), cucumberScenarioOutline.getGherkinModel());
                         List<Runner> children = getChildren();
@@ -224,9 +224,9 @@ public class Cucumber extends ParentRunner<FeatureRunner> {
             }
         };
 
-        List<ExamplesRunner> children = Fields.getSafeValue(scenarioOutlineRunner, "runners");
+        List<ExamplesRunner> children = Fields.getValue(scenarioOutlineRunner, "runners");
         for (ExamplesRunner child : children) {
-            List<ExecutionUnitRunner> currentRunners = Fields.getSafeValue(child, "runners");
+            List<ExecutionUnitRunner> currentRunners = Fields.getValue(child, "runners");
             List<ExecutionUnitRunner> runners = new ArrayList<>();
             for (ExecutionUnitRunner currentRunner : currentRunners) {
                 runners.add(replaceExecutionRunner(featureName, stepDefinitionsByPattern, currentRunner));

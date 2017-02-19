@@ -22,7 +22,7 @@ public class PicoFactory implements ObjectFactory {
     @Override
     public void start() {
         pico = new PicoBuilder().withCaching().build();
-        instances.keySet().forEach(clazz -> classes.remove(clazz));
+        instances.keySet().forEach(classes::remove);
         classes.forEach(clazz -> pico.addComponent(clazz));
         instances.forEach((clazz, instance) -> pico.addComponent(clazz, instance));
         pico.start();

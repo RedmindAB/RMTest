@@ -158,10 +158,10 @@ public class ParameterizableRuntime extends Runtime {
 
         if (!features.isEmpty() && !parameterizedScenarios.isEmpty()) {
             StringBuilder stringBuilder = new StringBuilder();
-            int maxLength = parameterizedScenarios.values().stream().map(f -> f.statement().getVisualName().length()).max(Integer::compareTo).get();
+            int maxLength = parameterizedScenarios.values().stream().map(f -> f.statement().getVisualName().length()).max(Integer::compareTo).orElse(0);
             parameterizedScenarios.values().forEach(factory -> {
-                CucumberFeature cucumberFeature = Fields.getSafeValue(factory.statement(), "cucumberFeature");
-                String path = Fields.getSafeValue(cucumberFeature, "path");
+                CucumberFeature cucumberFeature = Fields.getValue(factory.statement(), "cucumberFeature");
+                String path = Fields.getValue(cucumberFeature, "path");
                 String visualName = factory.statement().getVisualName().replaceAll("Scenario:", "");
                 stringBuilder.append("\n  ").append(visualName);
                 for (int i = 0; i < maxLength - visualName.length() - 5; i++) {
@@ -183,12 +183,12 @@ public class ParameterizableRuntime extends Runtime {
         features.forEach(feature -> {
             List<StepContainer> stepContainers = new ArrayList<>(feature.getFeatureElements());
 
-            CucumberBackground cucumberBackground = Fields.getSafeValue(feature, "cucumberBackground");
+            CucumberBackground cucumberBackground = Fields.getValue(feature, "cucumberBackground");
             if (cucumberBackground != null) {
                 stepContainers.add(cucumberBackground);
             }
 
-            parameterizedScenarios.values().stream().forEach(scenario -> stepContainers.add(scenario.statement()));
+            parameterizedScenarios.values().forEach(scenario -> stepContainers.add(scenario.statement()));
 
             int modifiedSteps;
             // we need to keep trying as long as we find new parameterizable steps in order to support composite sub scenarios
@@ -235,7 +235,7 @@ public class ParameterizableRuntime extends Runtime {
                                     }
 
                                     List<Step> newSteps = parameterizedScenario.getValue().statement().getSteps().stream()
-                                        .map(parameterizedStep -> wrapper.apply(parameterizedStep))
+                                        .map(wrapper)
                                         .collect(Collectors.toList());
                                     stepContainer.getSteps().addAll(i + 1, newSteps);
                                     i += newSteps.size();
@@ -261,13 +261,13 @@ public class ParameterizableRuntime extends Runtime {
 
     public PicoFactory picoFactory() throws RuntimeException {
         if (picoFactory == null) {
-            Collection<? extends Backend> backends = Fields.getSafeValue(this, "backends");
+            Collection<? extends Backend> backends = Fields.getValue(this, "backends");
             Optional<JavaBackend> first = backends.stream()
                 .filter(backend -> backend instanceof JavaBackend)
                 .map(backend -> (JavaBackend) backend)
                 .findFirst();
             if (first.isPresent()) {
-                picoFactory = Fields.getSafeValue(first.get(), "objectFactory");
+                picoFactory = Fields.getValue(first.get(), "objectFactory");
             } else {
                 throw new RuntimeException("can't find a javaBackend instance");
             }

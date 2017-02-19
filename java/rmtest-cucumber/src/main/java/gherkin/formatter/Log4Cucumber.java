@@ -31,7 +31,7 @@ public class Log4Cucumber implements Reporter, Formatter {
     @Override
     public void match(Match match) {
         if (match instanceof StepDefinitionMatch) {
-            Step step = Fields.getSafeValue(match, "step");
+            Step step = Fields.getValue(match, "step");
             logger.debug("    " + step.getKeyword() + step.getName());
             if (step.getRows() != null) {
                 Row header = step.getRows().get(0);

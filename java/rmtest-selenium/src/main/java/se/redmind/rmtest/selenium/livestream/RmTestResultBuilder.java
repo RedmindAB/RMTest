@@ -230,11 +230,11 @@ public class RmTestResultBuilder {
     }
 
     public boolean isScenario(Description description) {
-        return Fields.getSafeValue(description, "fUniqueId") instanceof Scenario;
+        return Fields.getValue(description, "fUniqueId") instanceof Scenario;
     }
 
     private boolean isStep(Description description) {
-        return Fields.getSafeValue(description, "fUniqueId") instanceof Step;
+        return Fields.getValue(description, "fUniqueId") instanceof Step;
     }
 
 
@@ -243,12 +243,11 @@ public class RmTestResultBuilder {
     }
 
     public String getScenarioName(Description desc) {
-        return String.format("%s: %s", ((Scenario) Fields.getSafeValue(desc, "fUniqueId")).getKeyword(),
-                ((Scenario) Fields.getSafeValue(desc, "fUniqueId")).getName());
+        return String.format("%s: %s", ((Scenario) Fields.getValue(desc, "fUniqueId")).getKeyword(),
+                ((Scenario) Fields.getValue(desc, "fUniqueId")).getName());
     }
 
     private String getGherkinStep(Description description) {
-        return ((Step) Fields.getSafeValue(description, "fUniqueId")).getKeyword() +
-                ((Step) Fields.getSafeValue(description, "fUniqueId")).getName();
+        return ((Step) Fields.getValue(description, "fUniqueId")).getKeyword() + ((Step) Fields.getValue(description, "fUniqueId")).getName();
     }
 }

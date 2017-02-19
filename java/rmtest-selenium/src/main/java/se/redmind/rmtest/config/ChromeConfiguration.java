@@ -26,7 +26,7 @@ public class ChromeConfiguration extends LocalConfiguration<ChromeDriver> {
     public String chromedriver;
 
     public ChromeConfiguration() {
-        super(DesiredCapabilities.chrome(), capabilities -> new ChromeDriver(capabilities));
+        super(DesiredCapabilities.chrome(), ChromeDriver::new);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class ChromeConfiguration extends LocalConfiguration<ChromeDriver> {
     }
 
     private static String getChromePath() {
-        String chromePath = null;
+        String chromePath;
         String osName = System.getProperty("os.name");
         if (osName.startsWith("Mac") || osName.startsWith("Linux")) {
             chromePath = NodeModules.path() + "/chromedriver/lib/chromedriver/chromedriver";
