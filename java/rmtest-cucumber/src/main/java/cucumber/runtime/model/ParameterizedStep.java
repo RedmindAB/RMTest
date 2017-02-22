@@ -15,16 +15,9 @@ import static cucumber.runtime.model.ParameterizedStepContainer.replacePlaceHold
  */
 public class ParameterizedStep extends Step {
 
-    private static final ThreadLocal<Integer> depth = new ThreadLocal<Integer>() {
+    private static final ThreadLocal<Integer> depth = ThreadLocal.withInitial(() -> 0);
 
-        @Override
-        protected Integer initialValue() {
-            return 0;
-        }
-
-    };
-
-    public static enum Type {
+    public enum Type {
 
         Start, SubStep, Parameterized, Quiet, End
     }

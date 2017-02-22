@@ -140,7 +140,7 @@ public class WebDriverWrapper<WebDriverType extends WebDriver> {
                 logger.info("Closing driver [" + description + "]");
                 try {
                     WebDriverType driver = driverInstance.get();
-                    CompletableFuture.runAsync(() -> driver.quit()).get(10, TimeUnit.SECONDS);
+                    CompletableFuture.runAsync(driver::quit).get(10, TimeUnit.SECONDS);
                 } catch (java.util.concurrent.TimeoutException e) {
                     logger.error("couldn't close driver [" + description + "] within 10 seconds...");
                 } catch (UnreachableBrowserException | InterruptedException | ExecutionException e) {
@@ -155,7 +155,7 @@ public class WebDriverWrapper<WebDriverType extends WebDriver> {
 
     public void stopAllDrivers() {
         logger.info("Closing all drivers");
-        openDrivers.forEach(driver -> driver.quit());
+        openDrivers.forEach(WebDriver::quit);
     }
 
     public void ignoreAtNoConnectivityById(String url, String id) {
@@ -240,9 +240,7 @@ public class WebDriverWrapper<WebDriverType extends WebDriver> {
 
     public static Predicate<WebDriverWrapper<?>> filter(Platform... values) {
         Set<Platform> platforms = Sets.newHashSet(values);
-        return driverWrapper -> {
-            return platforms.isEmpty() || platforms.contains(driverWrapper.getCapability().getPlatform());
-        };
+        return driverWrapper -> platforms.isEmpty() || platforms.contains(driverWrapper.getCapability().getPlatform());
     }
 
     @SafeVarargs
@@ -262,15 +260,13 @@ public class WebDriverWrapper<WebDriverType extends WebDriver> {
 
     public static Predicate<WebDriverWrapper<?>> filter(Capability... values) {
         Set<Capability> capabilities = Sets.newHashSet(values);
-        return driverWrapper -> {
-            return capabilities.isEmpty() || capabilities.stream().allMatch(capability -> {
-                String currCap = (String) driverWrapper.getCapability().getCapability(capability.name());
-                if (currCap == null) {
-                    currCap = "";
-                }
-                return currCap.equalsIgnoreCase(capability.value());
-            });
-        };
+        return driverWrapper -> capabilities.isEmpty() || capabilities.stream().allMatch(capability -> {
+            String currCap = (String) driverWrapper.getCapability().getCapability(capability.name());
+            if (currCap == null) {
+                currCap = "";
+            }
+            return currCap.equalsIgnoreCase(capability.value());
+        });
     }
 
     public static Predicate<WebDriverWrapper<?>> filterFromSystemProperties() {
@@ -282,7 +278,7 @@ public class WebDriverWrapper<WebDriverType extends WebDriver> {
         }
         if (System.getProperty(CapabilityType.PLATFORM) != null) {
             Set<Platform> platforms = Splitter.on(',').trimResults().splitToList(System.getProperty(CapabilityType.PLATFORM))
-                .stream().map(platform -> Platform.valueOf(platform)).collect(Collectors.toSet());
+                .stream().map(Platform::valueOf).collect(Collectors.toSet());
             filter = filter.and(driverWrapper -> platforms.contains(driverWrapper.getCapability().getPlatform()));
         }
         return filter;

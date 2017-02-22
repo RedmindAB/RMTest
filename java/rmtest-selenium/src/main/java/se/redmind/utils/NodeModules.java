@@ -26,12 +26,12 @@ public class NodeModules {
     public static String path(String basePath) {
         File file = new File(basePath);
         int size = file.getAbsolutePath().split(File.separator).length;
-        log.info("Searching for node_modules in " + file.getAbsolutePath() + " and its parents");
+        log.debug("Searching for node_modules in " + file.getAbsolutePath() + " and its parents");
         for (int i = size - 1; i > 0; i--) {
             String absolutePath = file.toPath().getRoot() + file.toPath().subpath(0, i).toString();
             String testPath = absolutePath + File.separator + "node_modules";
             if (new File(testPath).exists()) {
-                log.info("found node_modules folder in " + testPath);
+                log.debug("found node_modules folder in " + testPath);
                 return testPath;
             }
         }

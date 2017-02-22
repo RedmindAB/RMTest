@@ -18,7 +18,7 @@ public class PrettyFormatter implements Reporter, Formatter {
     private final boolean executing;
 
     private String uri;
-    private final Mapper<Tag, String> tagNameMapper = (Tag tag) -> tag.getName();
+    private final Mapper<Tag, String> tagNameMapper = Tag::getName;
 
     private Formats formats;
     private Match match;
@@ -488,7 +488,7 @@ class MatchResultPair {
         if (match != null) {
             return match.getArguments();
         }
-        return Collections.<Argument>emptyList();
+        return Collections.emptyList();
     }
 
     public String getMatchLocation() {

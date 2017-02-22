@@ -19,12 +19,7 @@ public interface StopWatch {
     long stop();
 
     StopWatch SYSTEM = new StopWatch() {
-        private final ThreadLocal<LinkedList<Long>> start = new ThreadLocal<LinkedList<Long>>() {
-            @Override
-            protected LinkedList<Long> initialValue() {
-                return new LinkedList<>();
-            }
-        };
+        private final ThreadLocal<LinkedList<Long>> start = ThreadLocal.withInitial(LinkedList::new);
 
         @Override
         public void start() {

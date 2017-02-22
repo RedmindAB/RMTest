@@ -53,10 +53,10 @@ public class WebDriverSteps {
     private static final String THIS_ELEMENT = "(?:(?:this|the|an) element(?:s)?|it(?:s)?)";
     private static final String MATCHES = "(!)?(reads|returns|is|equals|contains|starts with|ends with|links to|matches)";
     private static final String QUOTED_CONTENT = "\"([^\"]*)\"";
-    private static final String VARIABLE = "[_a-zA-Z][_\\-\\.\\w]*";
+    private static final String VARIABLE = "[_a-zA-Z][_\\-.\\w]*";
     private static final String NAMED = "\"(" + VARIABLE + ")\"";
 
-    private static final Pattern ALIAS = Pattern.compile("(.*)(?:\\$\\{([\\w\\(\\)]+)\\})(.*)");
+    private static final Pattern ALIAS = Pattern.compile("(.*)(?:\\$\\{([\\w()]+)})(.*)");
 
     private final Map<String, By> aliasedLocations = new LinkedHashMap<>();
     private final Map<String, String> aliasedValues = new LinkedHashMap<>();
@@ -122,7 +122,7 @@ public class WebDriverSteps {
     public void the_aliases_defined_in_the_file(String fileName) throws IOException {
         Splitter splitter = Splitter.on("|").trimResults().omitEmptyStrings();
         List<String> lines = Files.readLines(new File(fileName), Charset.defaultCharset());
-        List<List<String>> rows = lines.stream().map(line -> splitter.splitToList(line)).collect(Collectors.toList());
+        List<List<String>> rows = lines.stream().map(splitter::splitToList).collect(Collectors.toList());
         these_aliases(DataTable.create(rows).asMaps(String.class, String.class));
     }
 
@@ -293,7 +293,7 @@ public class WebDriverSteps {
     // Assertions
     @Then("^" + THAT + "the title " + MATCHES + " " + QUOTED_CONTENT + "$")
     public void the_title_matches(String not, String assertType, String expectedValue) {
-        assertString(assertType, getNotNullOrEmpty(() -> driver.getTitle()), not == null, expectedValue);
+        assertString(assertType, getNotNullOrEmpty(driver::getTitle), not == null, expectedValue);
     }
 
     @Then("^" + THAT + "the page content " + MATCHES + " " + QUOTED_CONTENT + "$")
@@ -437,7 +437,7 @@ public class WebDriverSteps {
 
     private boolean doesNotFind(By elementLocation) {
         return Try.toGet(() -> driver.findElements(elementLocation))
-            .until(result -> result.isEmpty())
+            .until(List::isEmpty)
             .delayRetriesBy(Configuration.current().defaultTimeOut * 100)
             .nTimes(10).isEmpty();
     }
@@ -469,7 +469,7 @@ public class WebDriverSteps {
 
     private String valueOf(String value, boolean readElementValue) {
         if (value == null) {
-            return value;
+            return null;
         }
         if (value.equals("UUID()")) {
             return UUID.randomUUID().toString();
@@ -553,7 +553,7 @@ public class WebDriverSteps {
     }
 
     private String getValueOf(WebElement element) {
-        return getNotNullOrEmpty(() -> element.getText());
+        return getNotNullOrEmpty(element::getText);
     }
 
     private void assertString(String assertType, String value, boolean shouldBeTrue, String expected) {

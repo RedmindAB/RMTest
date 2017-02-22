@@ -16,8 +16,7 @@ public class JavaTypes {
     public static JavaType getParametizedList(Field field) {
         ParameterizedType type = (ParameterizedType) field.getGenericType();
         JavaType parameterType = Configuration.objectMapper().getTypeFactory().constructType(type.getActualTypeArguments()[0]);
-        JavaType listType = Configuration.objectMapper().getTypeFactory().constructParametrizedType(ArrayList.class, List.class, parameterType);
-        return listType;
+        return Configuration.objectMapper().getTypeFactory().constructParametrizedType(ArrayList.class, List.class, parameterType);
     }
 
 }

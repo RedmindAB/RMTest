@@ -1,18 +1,15 @@
 package se.redmind.utils;
 
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.Table;
+import org.apache.commons.lang3.ClassUtils;
+import org.slf4j.LoggerFactory;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Predicate;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import org.apache.commons.lang3.ClassUtils;
-import org.slf4j.LoggerFactory;
-
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Table;
 
 /**
  * @author Jeremy Comte
@@ -48,7 +45,6 @@ public final class Fields {
                 if (value != null) {
                     Class<?> wrappedType = ClassUtils.primitiveToWrapper(field.getType());
                     if (!wrappedType.getCanonicalName().startsWith("java")) {
-                        System.out.println(currentPath + " " + field);
                         listByPathAndInstance(field.get(instance), filter, fieldsByPathAndDeclaringInstance, currentPath + field.getName() + ".");
                     }
                 }
@@ -64,21 +60,13 @@ public final class Fields {
         }
     }
 
-    public static <E> E getSafeValue(Object instance, String fieldName) {
+    @SuppressWarnings("unchecked")
+    public static <E> E getValue(Object instance, String fieldName) {
         try {
-            return getValue(instance, fieldName);
+            return (E) getField(instance.getClass(), fieldName).get(instance);
         } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException ex) {
-            Logger.getLogger(Fields.class.getName()).log(Level.SEVERE, null, ex);
+            throw new AssertionError(ex);
         }
-        return null;
-    }
-
-    public static <E> E getValue(Object instance, String fieldName) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
-        Field field = getFieldsByNameOf(instance.getClass()).get(fieldName);
-        if (field == null) {
-            throw new NoSuchFieldException(fieldName + " doesn't exist on " + instance.getClass().getName());
-        }
-        return (E) field.get(instance);
     }
 
     public static Field getField(Class<?> clazz, String name) throws NoSuchFieldException {

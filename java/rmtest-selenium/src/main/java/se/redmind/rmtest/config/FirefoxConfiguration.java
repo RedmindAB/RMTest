@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 public class FirefoxConfiguration extends LocalConfiguration<FirefoxDriver> {
 
     public FirefoxConfiguration() {
-        super(DesiredCapabilities.firefox(), capabilities -> new FirefoxDriver(capabilities));
+        super(DesiredCapabilities.firefox(), FirefoxDriver::new);
     }
 
 }

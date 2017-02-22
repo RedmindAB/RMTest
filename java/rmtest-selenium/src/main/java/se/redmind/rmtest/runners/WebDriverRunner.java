@@ -112,15 +112,11 @@ public class WebDriverRunner extends Parameterized implements Parallelizable {
     }
 
     protected Optional<WebDriverWrapper<?>> getCurrentDriverWrapper(Runner runner) {
-        try {
-            Object[] parameters = Fields.getValue(runner, "parameters");
-            for (Object parameter : parameters) {
-                if (parameter instanceof WebDriverWrapper) {
-                    return Optional.of((WebDriverWrapper<?>) parameter);
-                }
+        Object[] parameters = Fields.getValue(runner, "parameters");
+        for (Object parameter : parameters) {
+            if (parameter instanceof WebDriverWrapper) {
+                return Optional.of((WebDriverWrapper<?>) parameter);
             }
-        } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException ex) {
-            LOGGER.error(ex.getMessage(), ex);
         }
         return Optional.empty();
     }

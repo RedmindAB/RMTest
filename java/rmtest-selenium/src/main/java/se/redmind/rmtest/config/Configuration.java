@@ -220,12 +220,7 @@ public class Configuration {
             current = configuration.applySystemProperties().validate();
             // this will close all the drivers as the jvm goes down
             if (current.autoCloseDrivers) {
-                Runtime.getRuntime().addShutdownHook(new Thread() {
-                    @Override
-                    public void run() {
-                        current.stopAllDrivers();
-                    }
-                });
+                Runtime.getRuntime().addShutdownHook(new Thread(() -> current.stopAllDrivers()));
             }
         }
         return current;

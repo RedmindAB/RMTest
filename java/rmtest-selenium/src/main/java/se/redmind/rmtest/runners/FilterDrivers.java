@@ -31,7 +31,7 @@ public @interface FilterDrivers {
 
     Class<? extends Predicate<WebDriverWrapper<?>>> filter() default AlwaysTrue.class;
 
-    public static class AlwaysTrue implements Predicate<WebDriverWrapper<?>> {
+    class AlwaysTrue implements Predicate<WebDriverWrapper<?>> {
 
         @Override
         public boolean test(WebDriverWrapper<?> t) {
