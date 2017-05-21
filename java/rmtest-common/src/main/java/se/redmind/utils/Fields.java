@@ -56,7 +56,7 @@ public final class Fields {
         try {
             Fields.getField(instance.getClass(), fieldName).set(instance, value);
         } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException ex) {
-            LoggerFactory.getLogger(Fields.class).error(ex.getMessage(), ex);
+            throw new AssertionError(ex);
         }
     }
 
