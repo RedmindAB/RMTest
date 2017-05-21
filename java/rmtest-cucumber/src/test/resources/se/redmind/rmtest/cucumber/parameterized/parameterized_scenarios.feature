@@ -17,3 +17,7 @@ Feature: we want to be able to use a parameterized scenario in another scenario
       | word     | factor | result |
       | saturday | 2      | 16     |
       | sunday   | 3      | 18     |
+
+  Scenario: we call a parameterized scenario containing a block of text using that parameter
+    Given that we count the letters in a block of text containing "saturday"
+    Then this number is 8

@@ -1,6 +1,7 @@
 package se.redmind.rmtest.cucumber;
 
 import java.lang.reflect.Method;
+import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -56,11 +57,11 @@ public class CucumberRunner {
         } else if (command.hasOption("p")) {
             Set<Method> cucumberMethods = Stream.of(Given.class, Then.class, And.class, When.class)
                 .map(annotation -> ReflectionsUtils.current().getMethodsAnnotatedWith(annotation))
-                .flatMap(methods -> methods.stream()).collect(Collectors.toSet());
+                .flatMap(Collection::stream).collect(Collectors.toSet());
             LOGGER.info("known step definitions:");
             cucumberMethods.forEach(method -> {
                 String pattern = Stream.of(Given.class, Then.class, And.class, When.class)
-                    .filter(annotation -> method.isAnnotationPresent(annotation))
+                    .filter(method::isAnnotationPresent)
                     .map(annotation -> (String) Methods.invoke(method.getAnnotation(annotation), "value")).findFirst().get();
                 LOGGER.info(pattern);
             });

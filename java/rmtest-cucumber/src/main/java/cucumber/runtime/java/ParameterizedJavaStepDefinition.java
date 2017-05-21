@@ -91,7 +91,6 @@ public class ParameterizedJavaStepDefinition extends JavaStepDefinition {
 
         private Class<?> clazz;
         private Class<?>[] parametersClasses;
-        private ParameterizedJavaStepDefinition subSteps;
         private ParameterizedJavaStepDefinition start;
 
         public Factory(CucumberTagStatement statement, Pattern pattern, String[] parameters, ParameterizableRuntime runtime) {
@@ -159,15 +158,14 @@ public class ParameterizedJavaStepDefinition extends JavaStepDefinition {
                         ctClass = pool.makeClass(className);
 
                         ctClass.addField(CtField.make("public static cucumber.runtime.model.StepContainer STEPCONTAINER;", ctClass));
-                        ctClass.addField(CtField.make("public static cucumber.runtime.Runtime RUNTIME;", ctClass));
+                        ctClass.addField(CtField.make("public static cucumber.runtime.ParameterizableRuntime RUNTIME;", ctClass));
 
                         ctClass.addMethod(CtNewMethod.make(""
                             + "public void execute(" + parametersBuilder.toString() + ") {\n"
-                            + "     cucumber.runtime.java.QuietReporter reporter = new cucumber.runtime.java.QuietReporter();\n"
                             + "     cucumber.runtime.model.ParameterizedStepContainer parameterizedStepContainer = "
                             + "new cucumber.runtime.model.ParameterizedStepContainer(STEPCONTAINER, " + parametersNamesBuilder.toString() + ", " + parametersListBuilder.toString() + ");\n"
-                            + "     se.redmind.utils.Methods.invoke(parameterizedStepContainer, \"format\", new Object[] { reporter });\n"
-                            + "     se.redmind.utils.Methods.invoke(parameterizedStepContainer, \"runSteps\", new Object[] { reporter, RUNTIME });\n"
+                            + "     se.redmind.utils.Methods.invoke(parameterizedStepContainer, \"format\", new Object[] { RUNTIME.formatter() });\n"
+                            + "     se.redmind.utils.Methods.invoke(parameterizedStepContainer, \"runSteps\", new Object[] { RUNTIME.reporter(), RUNTIME });\n"
                             + "}", ctClass));
 
                         ctClass.addMethod(CtNewMethod.make("public void start(" + parametersBuilder.toString() + ") {}", ctClass));
@@ -184,14 +182,6 @@ public class ParameterizedJavaStepDefinition extends JavaStepDefinition {
                 }
             }
             return clazz;
-        }
-
-        public synchronized ParameterizedJavaStepDefinition addQuietSubStepsToGlue() {
-            if (subSteps == null) {
-                subSteps = new ParameterizedJavaStepDefinition(Methods.findMethod(clazz(), "execute", parametersClasses), pattern, 0, runtime.picoFactory());
-                runtime.getGlue().addStepDefinition(subSteps);
-            }
-            return subSteps;
         }
 
         public synchronized ParameterizedJavaStepDefinition addStartStepToGlue() {

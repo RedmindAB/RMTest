@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,9 +32,9 @@ import se.redmind.utils.Methods;
  */
 public class ParameterizableRuntime extends Runtime {
 
-    public static enum CompositionType {
+    public enum CompositionType {
 
-        replace, full, quiet
+        replace, full
     }
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -73,6 +74,14 @@ public class ParameterizableRuntime extends Runtime {
         printSummary();
     }
 
+    public Reporter reporter() {
+        return runtimeOptions.reporter(classLoader);
+    }
+
+    public Formatter formatter() {
+        return runtimeOptions.formatter(classLoader);
+    }
+
     public List<CucumberFeature> cucumberFeatures() {
         // default cucumber overrides the filters given in the @CucumberOptions annotation
         // using the cucumber.filters System.property, one can extend the filters instead of overriding it.
@@ -89,29 +98,25 @@ public class ParameterizableRuntime extends Runtime {
             }
         }
 
-        // if we work with tags we want to add the @parameterized and ~@ignore filters
-        boolean hasTags = false;
-        Object filter = null;
-        for (int i = 0; i < runtimeOptions.getFilters().size(); i++) {
-            filter = runtimeOptions.getFilters().get(i);
-            if (filter instanceof String && ((String) filter).contains("@")) {
-                hasTags = true;
-                runtimeOptions.getFilters().set(i, ((String) filter) + "," + Tags.PARAMETERIZED);
-            }
+        boolean hasTags = runtimeOptions.getFilters().stream()
+            .filter(filter -> filter instanceof String)
+            .map(filter -> (String) filter)
+            .filter(filter -> filter.contains("@"))
+            .findFirst().map(filter -> true).orElse(false);
+
+        // if we work with tags or if there is no filter we want to add the ~@parameterized and ~@ignore filters
+        if (hasTags || runtimeOptions.getFilters().isEmpty()) {
+            runtimeOptions.getFilters().add("~" + Tags.IGNORE);
+            runtimeOptions.getFilters().add("~" + Tags.PARAMETERIZED);
         }
 
         List<CucumberFeature> cucumberFeatures = new ArrayList<>();
-        if (filter == null || hasTags) {
-            runtimeOptions.getFilters().add("~" + Tags.IGNORE);
-        } else {
-            // otherwise we will look for the @parameterized scenarios and add them
-            RuntimeOptions parameterizedScenarioRuntimeOptions = new RuntimeOptions("");
-            parameterizedScenarioRuntimeOptions.getFilters().add(Tags.PARAMETERIZED);
-            parameterizedScenarioRuntimeOptions.getFilters().add("~" + Tags.IGNORE);
-            parameterizedScenarioRuntimeOptions.getFeaturePaths().add("classpath:");
-            cucumberFeatures.addAll(parameterizedScenarioRuntimeOptions.cucumberFeatures(resourceLoader));
-        }
+        // let's look for the @parameterized scenarios and add them
+        cucumberFeatures.addAll(CucumberFeature.load(resourceLoader,
+            Lists.newArrayList("classpath:"),
+            Lists.newArrayList(Tags.PARAMETERIZED, "~" + Tags.IGNORE)));
 
+        // the default features
         cucumberFeatures.addAll(runtimeOptions.cucumberFeatures(resourceLoader));
 
         // 1. Get the children from the parent class, intercept any parameterized scenario and instantiate their factories
@@ -142,9 +147,6 @@ public class ParameterizableRuntime extends Runtime {
                 if (Tags.isParameterized(statement)) {
                     ParameterizedJavaStepDefinition.Factory stepFactory = ParameterizedJavaStepDefinition.from(statement, this);
                     parameterizedScenarios.put(stepFactory.pattern(), stepFactory);
-                    if (stepFactory.parameters().length == 0) {
-                        stepFactory.addQuietSubStepsToGlue();
-                    }
                     statements.remove(j--);
                 } else if (name != null) {
                     TagStatement tagStatement = statement.getGherkinModel();
@@ -209,43 +211,37 @@ public class ParameterizableRuntime extends Runtime {
                         for (Map.Entry<Pattern, ParameterizedJavaStepDefinition.Factory> parameterizedScenario : parameterizedScenarios.entrySet()) {
                             Matcher matcher = parameterizedScenario.getKey().matcher(stepName);
                             if (matcher.matches()) {
-                                if (compositionType == CompositionType.quiet) {
-                                    stepContainer.getSteps().set(i, ParameterizedStep.asQuiet(step));
-                                    if (parameterizedScenario.getValue().parameters().length > 0) {
-                                        parameterizedScenario.getValue().addQuietSubStepsToGlue();
+                                Function<Step, ParameterizedStep> wrapper;
+                                String[] names = parameterizedScenario.getValue().parameters();
+                                Object[] scenarioParameters = new Object[names.length];
+                                for (int k = 0; k < names.length; k++) {
+                                    String value = matcher.group(k + 1);
+                                    if (value.startsWith("\"") && value.endsWith("\"")) {
+                                        value = value.substring(1, value.length() - 1);
                                     }
-                                } else {
-                                    Function<Step, ParameterizedStep> wrapper;
-                                    String[] names = parameterizedScenario.getValue().parameters();
-                                    Object[] scenarioParameters = new Object[names.length];
-                                    for (int k = 0; k < names.length; k++) {
-                                        String value = matcher.group(k + 1);
-                                        if (value.startsWith("\"") && value.endsWith("\"")) {
-                                            value = value.substring(1, value.length() - 1);
-                                        }
-                                        scenarioParameters[k] = value;
-                                    }
-                                    if (compositionType == CompositionType.full) {
-                                        parameterizedScenario.getValue().addStartStepToGlue();
-                                        stepContainer.getSteps().set(i, ParameterizedStep.startOf(step));
-                                        wrapper = parameterizedStep -> ParameterizedStep.asSubStep(parameterizedStep, names, scenarioParameters);
-                                    } else {
-                                        stepContainer.getSteps().remove(i--);
-                                        wrapper = parameterizedStep -> ParameterizedStep.parameterize(parameterizedStep, names, scenarioParameters);
-                                    }
-
-                                    List<Step> newSteps = parameterizedScenario.getValue().statement().getSteps().stream()
-                                        .map(wrapper)
-                                        .collect(Collectors.toList());
-                                    stepContainer.getSteps().addAll(i + 1, newSteps);
-                                    i += newSteps.size();
-                                    if (compositionType == CompositionType.full) {
-                                        stepContainer.getSteps().add(++i, ParameterizedStep.endOf(step));
-                                    }
-                                    modifiedSteps++;
+                                    scenarioParameters[k] = value;
                                 }
-                                break;
+                                if (compositionType == CompositionType.full) {
+                                    parameterizedScenario.getValue().addStartStepToGlue();
+                                    stepContainer.getSteps().set(i, ParameterizedStep.startOf(step));
+                                    wrapper = parameterizedStep -> ParameterizedStep.asSubStep(parameterizedStep, names, scenarioParameters);
+                                } else {
+                                    stepContainer.getSteps().remove(i--);
+                                    wrapper = parameterizedStep -> ParameterizedStep.parameterize(parameterizedStep, names, scenarioParameters);
+                                }
+
+                                List<Step> newSteps = parameterizedScenario.getValue().statement().getSteps().stream()
+                                    .map(wrapper)
+                                    .collect(Collectors.toList());
+                                stepContainer.getSteps().addAll(i + 1, newSteps);
+                                i += newSteps.size();
+                                if (compositionType == CompositionType.full) {
+                                    stepContainer.getSteps().add(++i, ParameterizedStep.endOf(step));
+                                }
+                                modifiedSteps++;
+
                             }
+
                         }
                     }
                 }

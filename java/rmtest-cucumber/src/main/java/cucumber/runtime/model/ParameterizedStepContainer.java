@@ -14,9 +14,8 @@ public class ParameterizedStepContainer extends StepContainer {
     public ParameterizedStepContainer(StepContainer stepContainer, String[] names, Object[] parameters) {
         super(stepContainer.cucumberFeature, Fields.getValue(stepContainer, "statement"));
 
-        stepContainer.getSteps().forEach(step -> {
-            step(new Step(step.getComments(), step.getKeyword(), replacePlaceHolders(step.getName(), names, parameters), step.getLine(), step.getRows(), step.getDocString()));
-        });
+        stepContainer.getSteps().forEach(step ->
+            step(new Step(step.getComments(), step.getKeyword(), replacePlaceHolders(step.getName(), names, parameters), step.getLine(), step.getRows(), step.getDocString())));
     }
 
     public static String replacePlaceHolders(String name, String[] names, Object[] parameters) {

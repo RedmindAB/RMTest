@@ -1,9 +1,8 @@
 package se.redmind.rmtest.cucumber.parameterized;
 
-import org.junit.Assert;
-
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 
 /**
  * @author Jeremy Comte
@@ -19,6 +18,11 @@ public class Steps {
 
     @Then("^that we write down the amount of letters in \"([^\"]*)\"$")
     public void we_write_down_the_amount_of_letters_in_value(String value) {
+        count = value.length();
+    }
+
+    @Then("^that we write down the amount of letters in:$")
+    public void we_write_down_the_amount_of_letters_in_block_value(String value) {
         count = value.length();
     }
 
