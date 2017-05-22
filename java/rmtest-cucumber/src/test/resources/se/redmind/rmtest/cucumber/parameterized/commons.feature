@@ -17,3 +17,10 @@ Feature: this file contains the parameterized scenarios
   @parameterized
   Scenario: that we count the letters in "<word>"
     Given that we write down the amount of letters in "<word>"
+
+  @parameterized
+  Scenario: that we count the letters in a block of text containing "<word>"
+    Given that we write down the amount of letters in:
+    """
+    <word>
+    """

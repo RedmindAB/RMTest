@@ -78,9 +78,10 @@ public class Cucumber extends ParentRunner<FeatureRunner> {
         ResourceLoader resourceLoader = new MultiLoader(classLoader);
         runtime = new ParameterizableRuntime(resourceLoader, new ResourceLoaderClassFinder(resourceLoader, classLoader), classLoader, runtimeOptions, name, parameters);
 
+        final JUnitOptions junitOptions = new JUnitOptions(runtimeOptions.getJunitOptions());
         final List<CucumberFeature> cucumberFeatures = runtime.cucumberFeatures();
         Reporter reporter = runtimeOptions.reporter(classLoader);
-        jUnitReporter = new JUnitReporter(reporter, runtimeOptions.formatter(classLoader), runtimeOptions.isStrict()) {
+        jUnitReporter = new JUnitReporter(reporter, runtimeOptions.formatter(classLoader), runtimeOptions.isStrict(), junitOptions) {
 
             public void result(Result result) {
                 if (hideStepsInReports) {

@@ -45,10 +45,6 @@ public class ParameterizedStep extends Step {
         }
     }
 
-    public String getOriginalName() {
-        return super.getName();
-    }
-
     @Override
     public String getKeyword() {
         String keyword;
@@ -75,30 +71,26 @@ public class ParameterizedStep extends Step {
         return output.toString();
     }
 
-    public String getOriginalKeyword() {
-        return super.getKeyword();
-    }
-
-    public static ParameterizedStep asQuiet(Step step) {
-        return new ParameterizedStep(step.getComments(), step.getKeyword(), step.getName().replaceAll(Tags.QUIET, "").trim(), step.getLine(), step.getRows(), step.getDocString(), Type.Quiet);
-    }
-
     public static ParameterizedStep startOf(Step step) {
         return new ParameterizedStep(step.getComments(), step.getKeyword(), step.getName().replaceAll(Tags.FULL, "").trim(), step.getLine(), step.getRows(), step.getDocString(), Type.Start);
     }
 
     public static ParameterizedStep asSubStep(Step step, String[] names, Object[] parameters) {
         return new ParameterizedStep(step.getComments(), step.getKeyword(), replacePlaceHolders(step.getName(), names, parameters), step.getLine(),
-            step.getRows(), step.getDocString(), Type.SubStep);
+            step.getRows(), parameterizeDocString(step.getDocString(), names, parameters), Type.SubStep);
     }
 
     public static ParameterizedStep parameterize(Step step, String[] names, Object[] parameters) {
         return new ParameterizedStep(step.getComments(), step.getKeyword(), replacePlaceHolders(step.getName(), names, parameters), step.getLine(),
-            step.getRows(), step.getDocString(), Type.Parameterized);
+            step.getRows(), parameterizeDocString(step.getDocString(), names, parameters), Type.Parameterized);
     }
 
     public static ParameterizedStep endOf(Step step) {
         return new ParameterizedStep(step.getComments(), step.getKeyword(), step.getName().replaceAll(Tags.FULL, "").trim(), step.getLine(), step.getRows(), step.getDocString(), Type.End);
+    }
+
+    private static DocString parameterizeDocString(DocString docString, String[] names, Object[] parameters) {
+        return docString == null ? null : new DocString(docString.getContentType(), replacePlaceHolders(docString.getValue(), names, parameters), docString.getLine());
     }
 
 }
